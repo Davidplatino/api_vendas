@@ -22,4 +22,3 @@ class ShowProductService {
 }
 
 export default ShowProductService;
-
