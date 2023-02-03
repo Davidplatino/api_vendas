@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { SimpleConsoleLogger } from 'typeorm';
 import CreateUserService from '../services/CreateUserService';
 import DeleteUserService from '../services/DeleteUserService';
 import ListUserService from '../services/ListUserService';
@@ -7,6 +8,8 @@ import UpdateUserService from '../services/UpdateUserService';
 export default class UsersController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listUser = new ListUserService();
+
+    console.log(request.user.id);
 
     const users = await listUser.execute();
 
